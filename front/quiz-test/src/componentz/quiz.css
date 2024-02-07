@@ -1,0 +1,66 @@
+body {
+    background-image: url(/img/fondo.jpg);
+}
+
+.container {
+    width: 75%;
+    height: auto;
+    box-shadow: 2px black;
+    margin: auto;
+    padding: 30px 35px;
+    background-color: rgba(154, 154, 154, 0.194);
+    border-radius: 10px;
+}
+
+.question {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 16px;
+    border-radius: 30px;
+    margin: 30px 0;
+    box-shadow: 10px;
+    background-color: rgba(69, 69, 69, 0);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.700);
+}
+
+.question h1 {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+}
+
+.question:hover h1,
+li {
+    color: black;
+}
+
+.question h1,
+li {
+    color: #fff !important;
+}
+
+.question:hover {
+    background-color: rgba(101, 101, 101, 0.34);
+}
+
+.list-options li {
+    list-style: none;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    width: 40%;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.opc:hover {
+    background-color: #bc2afb;
+    transition: 0.5s;
+}
+
+.boton {
+    
+    border-radius: 10px;
+}
+
+.opc-selected{
+    background-color: #bc2afb;
+}

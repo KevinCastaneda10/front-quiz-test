@@ -1,0 +1,62 @@
+.App-header {
+  /*background-color: #05045c !important;*/
+  background-image: radial-gradient(#4c32ce, #40318a, #1d0e65, #090230);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.titulo {
+  color: #3dc0e7;
+}
+
+.parrafo {
+  font-size: 25px;
+  color: #ff0000;
+  margin-bottom: 0px;
+}
+
+.cuadro {
+  width: 257px;
+  height: 75px;
+  padding: 16px;
+  border-radius: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 1s all;
+  color: #ffffff;
+  background-color: #2258bd;
+  text-align: center;
+  box-shadow: 10px 10px 10px 10px #7f70ce;
+  background-image: url(/img/inicio.jpg);
+}
+
+.cuadro:hover {
+  background-color: #6582b8;
+}
+
+.cuadro:hover p {
+  font-size: 30px;
+  transition: 1s all;
+}
+
+.cuadro p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.App-header {
+  background-color: #9197b9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+

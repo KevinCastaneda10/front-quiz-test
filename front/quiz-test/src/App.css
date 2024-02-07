@@ -1,0 +1,60 @@
+
+
+.App-header {
+  background-color: #ff0000 !important;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.titulo {
+  color: #3dc0e7;
+}
+
+.parrafo {
+  font-size: 25px;
+  color: #ff0000;
+  margin-bottom: 0px;
+}
+
+.cuadro {
+  width: 200px;
+  height: 150px;
+  padding: 16px;
+  border-radius: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 1s all;
+  color: #ffffff;
+  background-color: #0558f3;
+}
+
+.cuadro:hover {
+  background-color: #3ba0e2;
+}
+
+.cuadro:hover p {
+  font-size: 30px;
+  transition: 1s all;
+}
+
+.cuadro p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.App-header {
+  background-color: #9197b9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
