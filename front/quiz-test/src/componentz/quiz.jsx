@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./quiz.css";
 import data from "../data/data";
+import { useNavigate } from "react-router-dom";
 
 const Quiz = () => {
+  const navigate = useNavigate();
   const [classLi, setClassLi] = useState({
     "1-1": "opc",
     "1-2": "opc",
@@ -96,8 +98,13 @@ const Quiz = () => {
     }
   }
 
+  function sendResult(){
+    console.log("BOTON!!")
+    navigate("/result");
+  }
+
   return (
-    <div>
+    <div className="coninter-gen" >
       <div className="container">
         {data.questions.map((ele, ind) => {
           return (
@@ -128,9 +135,7 @@ const Quiz = () => {
             </div>
           );
         })}
-        <div>
-          <button className="boton">Enviar</button>
-        </div>
+        <div className="boton" onClick={sendResult} >Enviar</div>
       </div>
     </div>
   );

@@ -1,4 +1,8 @@
-body {
+/* body {
+    background-image: url(/img/fondo.jpg);
+} */
+.coninter-gen{
+    width: 100%;
     background-image: url(/img/fondo.jpg);
 }
 
@@ -57,10 +61,21 @@ li {
 }
 
 .boton {
-    
+    background-color: #ababab6c;
+    height: 35px;
+    width: 50%;
+    margin: 0px 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
+    color: #fff;
+    border: 1px solid #ffffff;
+    font-size: large;
+    cursor: pointer;
 }
 
-.opc-selected{
+.opc-selected {
     background-color: #bc2afb;
 }

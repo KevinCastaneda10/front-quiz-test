@@ -9,15 +9,15 @@ const Resultado = () => {
   }
 
   function navigateToQuiz() {
-    navigate (".");
+    navigate ("./");
   }
 
   return (
-    <header className="App-header" onClick={navigateToQuiz}>
-      <div className="inicio-test">
-        <div className="cuadro" onClick={seleccionar}></div>
+    <div className="fond" onClick={navigateToQuiz}>
+      <div className="contenedor">
+       
       </div>
-    </header>
+    </div>
   );
 };
 
