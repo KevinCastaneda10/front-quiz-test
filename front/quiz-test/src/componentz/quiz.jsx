@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./quiz.css";
-import data from "../data/data";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Quiz = () => {
   const navigate = useNavigate();
+  const [dataQuest, setDataQuest] = useState([]);
   const [classLi, setClassLi] = useState({});
   const [objEleQ1, setObjEleQ1] = useState({});
   const [objEleQ2, setObjEleQ2] = useState({});
@@ -16,7 +17,7 @@ const Quiz = () => {
   const [objEleQ8, setObjEleQ8] = useState({});
   const [objEleQ9, setObjEleQ9] = useState({});
   const [objEleQ10, setObjEleQ10] = useState({});
-  const [responseCompleted, setResponseCompleted] = useState({});
+  const [responseCompleted, setResponseCompleted] = useState([]);
 
   function selectedOption(e) {
 
@@ -26,11 +27,7 @@ const Quiz = () => {
       if (!questionSelected.split("")[2]) {
         return { ...responseCompleted, [questionSelected.split("")[0]]: questionSelected.split("")[1] }
       }
-      return {
-        ...responseCompleted,
-        [questionSelected.split("")[0] + "" + questionSelected.split("")[1]]: questionSelected.split("")[2]
-      }
-
+      return { ...responseCompleted, [questionSelected.split("")[0] + "" + questionSelected.split("")[1]]: questionSelected.split("")[2] }
     })
 
     if (questionSelected.split("")[0] == "1" && !questionSelected.split("")[2]) {
@@ -100,18 +97,26 @@ const Quiz = () => {
     })
   }
 
-  function sendResult() {
+  async function sendResult() {
     // navigate("/result");
-    console.log(objEleQ1)
+    await axios.post('http://localhost:8080/quiz/addResponse/', responseCompleted)
   }
+
+  async function getDataQuestion() {
+    let resp = await axios.get('http://localhost:8080/quiz/')
+    console.log(resp?.data?.data[0]?.questions)
+    setDataQuest(resp?.data?.data[0]?.questions)
+  }
+
   useEffect(() => {
-    console.log(responseCompleted)
-  })
+    getDataQuestion()
+  }, [])
+
 
   return (
     <div className="coninter-gen" >
       <div className="container">
-        {data.questions.map((ele, ind) => {
+        {dataQuest.map((ele, ind) => {
           return (
             <div className="question" key={ind}>
               <h1>
