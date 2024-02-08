@@ -2,6 +2,7 @@ const data = {
     categoria: "Literatura",
     questions: [
         {
+
             question: "¿Qué selección ha ganado más Copas Mundiales de Fútbol?",
             options: [
                 {1:"Alemania", correct: false},
@@ -11,6 +12,7 @@ const data = {
             ]
         },
         {
+
             question: "¿Cuántos anillos hay en la bandera olímpica?",
             options: [
                 {1:"Cuatro", correct: false},
@@ -20,6 +22,7 @@ const data = {
             ]
         },
         {
+
             question: "¿Quién pintó 'La última cena'?",
             options: [
                 {1:"Leonardo DaVinci", correct: true},
@@ -29,6 +32,7 @@ const data = {
             ]
         },
         {
+
             question: "¿Quién pintó la 'Capilla Sixtina'?",
             options: [
                 {1:"Salvador Dalí", correct: false},
@@ -38,6 +42,7 @@ const data = {
             ]
         },
         {
+
             question: "¿Quién inventó la bombilla?",
             options: [
                 {1:"Nicola Tesla", correct: false},

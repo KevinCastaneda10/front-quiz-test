@@ -77,5 +77,5 @@ li {
 }
 
 .opc-selected {
-    background-color: #bc2afb;
+    background-color: #bc2afb !important;
 }

@@ -1,129 +1,129 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./quiz.css";
 import data from "../data/data";
 import { useNavigate } from "react-router-dom";
 
 const Quiz = () => {
   const navigate = useNavigate();
-  const [classLi, setClassLi] = useState({
-    "1-1": "opc",
-    "1-2": "opc",
-    "1-3": "opc",
-    "1-4": "opc",
-
-    "2-1": "opc",
-    "2-2": "opc",
-    "2-3": "opc",
-    "2-4": "opc",
-
-    "3-1": "opc",
-    "3-2": "opc",
-    "3-3": "opc",
-    "3-4": "opc",
-
-    "4-1": "opc",
-    "4-2": "opc",
-    "4-3": "opc",
-    "4-4": "opc",
-
-    "5-1": "opc",
-    "5-2": "opc",
-    "5-3": "opc",
-    "5-4": "opc",
-
-    "6-1": "opc",
-    "6-2": "opc",
-    "6-3": "opc",
-    "6-4": "opc",
-
-    "7-1": "opc",
-    "7-2": "opc",
-    "7-3": "opc",
-    "7-4": "opc",
-
-    "8-1": "opc",
-    "8-2": "opc",
-    "8-3": "opc",
-    "8-4": "opc",
-
-    "9-1": "opc",
-    "9-2": "opc",
-    "9-3": "opc",
-    "9-4": "opc",
-
-    "10-1": "opc",
-    "10-2": "opc",
-    "10-3": "opc",
-    "10-4": "opc",
-  });
+  const [classLi, setClassLi] = useState({});
+  const [objEleQ1, setObjEleQ1] = useState({});
+  const [objEleQ2, setObjEleQ2] = useState({});
+  const [objEleQ3, setObjEleQ3] = useState({});
+  const [objEleQ4, setObjEleQ4] = useState({});
+  const [objEleQ5, setObjEleQ5] = useState({});
+  const [objEleQ6, setObjEleQ6] = useState({});
+  const [objEleQ7, setObjEleQ7] = useState({});
+  const [objEleQ8, setObjEleQ8] = useState({});
+  const [objEleQ9, setObjEleQ9] = useState({});
+  const [objEleQ10, setObjEleQ10] = useState({});
+  const [responseCompleted, setResponseCompleted] = useState({});
 
   function selectedOption(e) {
-    let questionSelected = e.target.id.split("-");
-    console.log(questionSelected[0]);
-    console.log(questionSelected[1]);
 
-    if (questionSelected[0] == 1) {
-      if (questionSelected[1] == 1) {
-        setClassLi({
-          "1-1": "opc-selected",
-          "1-1": "opc",
-          "1-1": "opc",
-          "1-1": "opc",
-        });
+
+    let questionSelected = e.target.id;
+    setResponseCompleted(() => {
+      if (!questionSelected.split("")[2]) {
+        return { ...responseCompleted, [questionSelected.split("")[0]]: questionSelected.split("")[1] }
       }
-      if (questionSelected[1] == 2) {
-        setClassLi({
-          "1-1": "opc",
-          "1-1": "opc-selected",
-          "1-1": "opc",
-          "1-1": "opc",
-        });
+      return {
+        ...responseCompleted,
+        [questionSelected.split("")[0] + "" + questionSelected.split("")[1]]: questionSelected.split("")[2]
       }
-      if (questionSelected[1] == 3) {
-        setClassLi({
-          "1-1": "opc",
-          "1-1": "opc",
-          "1-1": "opc-selected",
-          "1-1": "opc",
-        });
-      }
-      if (questionSelected[1] == 4) {
-        setClassLi({
-          "1-1": "opc",
-          "1-1": "opc",
-          "1-1": "opc",
-          "1-1": "opc-selected",
-        });
-      }
+
+    })
+
+    if (questionSelected.split("")[0] == "1" && !questionSelected.split("")[2]) {
+      setObjEleQ1(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
     }
+    if (questionSelected.split("")[0] == "2") {
+      setObjEleQ2(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    if (questionSelected.split("")[0] == "3") {
+      setObjEleQ3(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    if (questionSelected.split("")[0] == "4") {
+      setObjEleQ4(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    else if (questionSelected.split("")[0] == "5") {
+      setObjEleQ5(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    else if (questionSelected.split("")[0] == "6") {
+      setObjEleQ6(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    else if (questionSelected.split("")[0] == "7") {
+      setObjEleQ7(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    else if (questionSelected.split("")[0] == "8") {
+      setObjEleQ8(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+    else if (questionSelected.split("")[0] == "9") {
+      setObjEleQ9(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    } else {
+      setObjEleQ10(() => {
+        return { [questionSelected]: "opc-selected" }
+      })
+    }
+
+    let onjRes = {
+      ...objEleQ1,
+      ...objEleQ2,
+      ...objEleQ3,
+      ...objEleQ4,
+      ...objEleQ5,
+      ...objEleQ6,
+      ...objEleQ7,
+      ...objEleQ8,
+      ...objEleQ9,
+      ...objEleQ10
+    }
+    setClassLi((obj) => {
+      return onjRes
+    })
   }
 
-  function sendResult(){
-    console.log("BOTON!!")
-    navigate("/result");
+  function sendResult() {
+    // navigate("/result");
+    console.log(objEleQ1)
   }
+  useEffect(() => {
+    console.log(responseCompleted)
+  })
 
   return (
     <div className="coninter-gen" >
       <div className="container">
         {data.questions.map((ele, ind) => {
           return (
-            <div className="question">
+            <div className="question" key={ind}>
               <h1>
                 {ind + 1}. {ele.question}
               </h1>
               <ul className="list-options">
                 {ele.options.map((op, indOp) => {
-                  console.log(classLi[ind + 1 + "-" + (indOp + 1)]);
-                  // console.log(
-                  //   classLi[indOp][indOp + 1][
-                  //     ind + 1 + "-" + (indOp + 1).toString()
-                  //   ]
-                  // );
                   return (
                     <li
-                      id={ind + 1 + "-" + (indOp + 1)}
-                      className={classLi[ind + 1 + "-" + (indOp + 1)]}
+                      key={indOp}
+                      id={`${ind + 1}${indOp + 1}`}
+                      className={`opc ${classLi[`${ind + 1}${indOp + 1}`]} && ""`}
                       onClick={selectedOption}
                     >
                       {" "}
@@ -135,7 +135,9 @@ const Quiz = () => {
             </div>
           );
         })}
-        <div className="boton" onClick={sendResult} >Enviar</div>
+        {Object.keys(responseCompleted).length >= 10 &&
+          <div className="boton" onClick={sendResult} >Enviar</div>}
+
       </div>
     </div>
   );
