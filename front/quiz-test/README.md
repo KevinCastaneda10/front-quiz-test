@@ -10,6 +10,6 @@
 4. npm start
 
 # Tecnologias
-1.React
+1. React
 2. Html
 3. CSS
